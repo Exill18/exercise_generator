@@ -14,7 +14,6 @@ Welcome to the Exercise Generator project! This project is a Django-based web ap
 - Integration with MathJax for rendering mathematical expressions
 
 ## Project Structure
-Directory structure:
 └── exill18-exercise_generator/
     ├── README.md
     ├── manage.py
