@@ -14,31 +14,33 @@ Welcome to the Exercise Generator project! This project is a Django-based web ap
 - Integration with MathJax for rendering mathematical expressions
 
 ## Project Structure
+Directory structure:
+└── exill18-exercise_generator/
+    ├── README.md
+    ├── manage.py
+    ├── exercise_generator/
+    │   ├── __init__.py
+    │   ├── asgi.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   └── wsgi.py
+    └── exercises/
+        ├── __init__.py
+        ├── admin.py
+        ├── apps.py
+        ├── models.py
+        ├── tests.py
+        ├── urls.py
+        ├── views.py
+        ├── migrations/
+        │   └── __init__.py
+        ├── static/
+        │   └── check-for-tex.js
+        └── templates/
+            └── exercises/
+                ├── index.html
+                └── results.html
 
-```
-exercise_generator/
-├── __init__.py
-├── asgi.py
-├── settings.py
-├── urls.py
-├── wsgi.py
-exercises/
-├── __init__.py
-├── admin.py
-├── apps.py
-├── models.py
-├── static/
-│   └── check-for-tex.js
-├── templates/
-│   └── exercises/
-│       ├── index.html
-│       └── results.html
-├── tests.py
-├── urls.py
-└── views.py
-manage.py
-db.sqlite3
-.gitignore
 ```
 
 ## Setup and Installation
