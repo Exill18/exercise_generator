@@ -108,6 +108,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 - [MathJax](https://www.mathjax.org/)
 
 ---
-
-Feel free to customize this `README.md` file to better suit your project's needs.
 ```
