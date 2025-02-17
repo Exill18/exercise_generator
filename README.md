@@ -1,9 +1,9 @@
-Collecting workspace informationSure, here is a `README.md` file for your project:
-
 ```md
 # Exercise Generator
 
-Welcome to the Exercise Generator project! This project is a Django-based web application that dynamically generates math exercises for users to solve. It includes various types of exercises such as linear equations, quadratic equations, systems of equations, matrix operations, trigonometry, and more.
+Welcome to the Exercise Generator project! This project is a Django-based web application that 
+dynamically generates math exercises for users to solve. It includes various types of exercises
+such as linear equations, quadratic equations, systems of equations, matrix operations, trigonometry, and more.
 
 ## Features
 
@@ -55,7 +55,7 @@ Welcome to the Exercise Generator project! This project is a Django-based web ap
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/yourusername/exercise_generator.git
+git clone https://github.com/Exill18/exercise_generator.git
 cd exercise_generator
 ```
 
@@ -107,5 +107,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
 - [NumPy](https://numpy.org/)
 - [MathJax](https://www.mathjax.org/)
 
----
-```
