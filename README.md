@@ -3,7 +3,7 @@
 
 Welcome to the Exercise Generator project! This project is a Django-based web application that 
 dynamically generates math exercises for users to solve. It includes various types of exercises
-such as linear equations, quadratic equations, systems of equations, matrix operations, trigonometry, and more.
+such as linear equations, quadratic equations, systems of equations, matrix operations, trigonometry.
 
 ## Features
 
