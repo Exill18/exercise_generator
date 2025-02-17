@@ -1,0 +1,61 @@
+<!-- results.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; }
+        .result {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .correct { background: #e8f5e9; border-color: #c8e6c9; }
+        .incorrect { background: #ffebee; border-color: #ffcdd2; }
+        .score {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .question {
+            white-space: pre-wrap;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .answer {
+            margin: 8px 0;
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+        }
+        .points {
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="score">Pontuação Total: {{ total_score }} pontos</div>
+
+    {% for result in results %}
+    <div class="result {% if result.is_correct %}correct{% else %}incorrect{% endif %}">
+        <div class="question">
+            <strong>Questão {{ forloop.counter }}:</strong><br>
+            {{ result.question|linebreaks }}
+        </div>
+        <div class="answer">Sua resposta: {{ result.user_answer }}</div>
+        <div class="answer">Resposta correta: {{ result.correct_answer }}</div>
+        <div class="points">Pontos obtidos: {{ result.points }}</div>
+    </div>
+    {% endfor %}
+
+    <a href="{% url 'exam' %}"><button>Novo Teste</button></a>
+</body>
+</html>
