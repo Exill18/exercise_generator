@@ -392,8 +392,8 @@ def exam_view(request):
                 ex for ex in EXERCISE_TYPES 
                 if ex.IDENTIFIER == ex_data['type']
             )
-            form = ExerciseForm(request.POST, prefix=str(idx), exercise=exercise_class)
-            
+            params = ex_data['params']  # Extract params from ex_data
+            form = ExerciseForm(request.POST, prefix=str(idx), exercise_class=exercise_class, params=params)            
             if form.is_valid():
                 is_correct = exercise_class.validate_answer(
                     form.cleaned_data['answer'],
@@ -421,7 +421,7 @@ def exam_view(request):
             })
         
         request.session['exercises'] = new_exercises
-        return render(request, 'results.html', {
+        return render(request, 'exercises/results.html', {
             'results': results,
             'total_score': round(total_score, 2)
         })
