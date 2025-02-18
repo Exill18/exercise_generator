@@ -1,4 +1,3 @@
-<!-- exam.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,21 +54,21 @@
     <form method="post">
         {% csrf_token %}
         <h2>Teste de Matemática</h2>
-        {% if forms %}
-            {% for form in forms %}
-            <div class="exercise">
-                <div class="question">
-                    <strong>Questão {{ forloop.counter }}:</strong><br>
-                    {{ form.fields.answer.label|striptags }}
-                </div>
-                {{ form.answer }}
-                <div class="points">[{{ form.exercise_class.POINTS }} pontos]</div>
+        {% for form, question in form_question_pairs %}
+        <div class="exercise">
+            <div class="question">
+                <strong>Questão {{ forloop.counter }}:</strong><br>
+                {{ question }}
             </div>
+            {% for field in form %}
+                <div class="part">
+                    {{ field.label_tag }}
+                    {{ field }}
+                </div>
             {% endfor %}
-            <button type="submit">Entregar Teste</button>
-        {% else %}
-            <p>Nenhum exercício disponível no momento.</p>
-        {% endif %}
+        </div>
+        {% endfor %}
+        <button type="submit">Entregar Teste</button>
     </form>
 </body>
 </html>

@@ -45,14 +45,17 @@
     <div class="score">Pontuação Total: {{ total_score }} pontos</div>
 
     {% for result in results %}
-    <div class="result {% if result.is_correct %}correct{% else %}incorrect{% endif %}">
-        <div class="question">
-            <strong>Questão {{ forloop.counter }}:</strong><br>
-            {{ result.question|linebreaks }}
+    <div class="result">
+        <div class="question">{{ result.question }}</div>
+        {% for part in result.parts %}
+        <div class="part">
+            <strong>{{ part.desc }}:</strong>
+            Sua resposta: {{ part.user_input }}<br>
+            Resposta correta: {{ part.correct_answer }}<br>
+            Pontos: {{ part.points }}
         </div>
-        <div class="answer">Sua resposta: {{ result.user_answer }}</div>
-        <div class="answer">Resposta correta: {{ result.correct_answer }}</div>
-        <div class="points">Pontos obtidos: {{ result.points }}</div>
+        {% endfor %}
+        Total: {{ result.total_points }}
     </div>
     {% endfor %}
 
