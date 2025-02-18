@@ -15,6 +15,7 @@ such as linear equations, quadratic equations, systems of equations, matrix oper
 
 ## Project Structure
 └── exill18-exercise_generator/
+    ├── LICENSE 
     ├── README.md
     ├── manage.py
     ├── exercise_generator/
